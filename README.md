@@ -1,7 +1,7 @@
 # Chat example
 express.js ♥︎ socket.io ♥︎ VanillaJS
 
-Minimalistic chat example.
+Minimalistic chat example. Pull requests welcome!
 
 ## Demo
 [https://chat-example-pakastin.c9users.io/](https://chat-example-pakastin.c9users.io/)
