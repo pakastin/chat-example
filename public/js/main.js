@@ -48,8 +48,11 @@
     name, message, send
   ]);
 
+  var userlist = div({className: 'userlist'});
+
   document.body.insertBefore(compose, document.body.firstChild);
-  document.body.insertBefore(messages, compose);
+  document.body.insertBefore(userlist, compose);
+  document.body.insertBefore(messages, userlist);
 
   var socket = io.connect();
 
@@ -64,6 +67,19 @@
       td({className: 'message', textContent: message})
     ]));
     messages.scrollTop = messages.scrollHeight;
+  });
+
+  socket.on('userlist', function (users) {
+    users.sort(function (a, b) {
+      a = '' + a;
+      b = '' + b;
+      return a.localeCompare(b);
+    });
+    if (users.length) {
+      userlist.innerHTML = '<p><b>Users</b></p><p>' + users.join('</p><p>') + '</p>';
+    } else {
+      userlist.innerHTML = 'You are alone :(';
+    }
   });
 
   compose.addEventListener('submit', function (e) {

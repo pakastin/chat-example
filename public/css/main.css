@@ -31,6 +31,14 @@ body {
 .messages .name {
   color: #666;
 }
+.userlist {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: .75rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+}
 .compose {
   background-color: #fff;
   box-shadow: 0 -1px 2px rgba(0, 0, 0, .25);

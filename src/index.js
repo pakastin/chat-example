@@ -15,6 +15,7 @@ app.use(express.static(__dirname + '/../public'));
 server.listen(8080);
 
 io.on('connection', function (socket) {
+  sendUserList();
   socket.on('msg', function (data) {
     if (!sockets[socket.id]) {
       io.emit('msg', {
@@ -22,12 +23,16 @@ io.on('connection', function (socket) {
         name: data.name,
         message: 'joined..'
       });
+      sockets[socket.id] = data.name;
+      sendUserList();
     } else if (sockets[socket.id] !== data.name) {
       io.emit('msg', {
         time: Date.now(),
         name: sockets[socket.id],
         message: 'changed name to ' + data.name + '..'
       });
+      sockets[socket.id] = data.name;
+      sendUserList();
     }
     sockets[socket.id] = data.name;
     data.time = Date.now();
@@ -43,6 +48,17 @@ io.on('connection', function (socket) {
         message: 'left..'
       })
       sockets[socket.id] = null;
+      sendUserList();
     }
   });
+  function sendUserList () {
+    var names = [];
+
+    for (var id in sockets) {
+      if (sockets[id]) {
+        names.push(sockets[id]);
+      }
+    }
+    io.emit('userlist', names);
+  }
 });
