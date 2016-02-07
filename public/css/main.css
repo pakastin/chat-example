@@ -16,8 +16,10 @@ body {
   color: #333;
 }
 .messages {
+  background-color: #f5f5f5;
   height: calc(100% - 2.5rem);
   overflow: auto;
+  padding: .25rem;
 }
 .messages table {
   border-collapse: separate;
@@ -30,11 +32,13 @@ body {
   color: #666;
 }
 .compose {
+  background-color: #fff;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, .25);
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2.5rem;
+  height: 3rem;
 }
 .compose input, .compose button {
   background: none;
@@ -44,7 +48,7 @@ body {
   border: 0;
   outline: 0;
   vertical-align: top;
-  padding: .5rem;
+  padding: .75rem;
 }
 .compose .name {
   width: 10rem;
