@@ -54,7 +54,7 @@
   var socket = io.connect();
 
   socket.on('msg', function (msg) {
-    var time = new Date(msg.time).toLocaleString();
+    var time = humanizeTime(msg.time);
     var nickname = msg.nickname;
     var message = msg.message;
 
@@ -75,3 +75,9 @@
     message.focus();
   });
 })();
+
+function humanizeTime (time) {
+  var date = new Date(time);
+
+  return date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+}
