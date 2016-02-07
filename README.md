@@ -25,6 +25,6 @@ docker run -d -p 8080:8080 xxxxxxxxxx
 ```
 
 ## Check out my other projects
-[HTML5 Deck of Cards](https://deck-of-cards.js.org)
-[HTML5 Node Garden](https://nodegarden.js.org)
-[FRZR view library](https://frzr.js.org)
+- [HTML5 Deck of Cards](https://deck-of-cards.js.org)
+- [HTML5 Node Garden](https://nodegarden.js.org)
+- [FRZR view library](https://frzr.js.org)
