@@ -1,0 +1,51 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+html {
+  font-size: 87.5%;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #222;
+}
+.messages {
+  height: calc(100% - 2.5rem);
+  overflow: auto;
+}
+.messages table {
+  border-collapse: separate;
+  border-spacing: .5rem .25rem;
+}
+.compose {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+.compose input, .compose button {
+  background: none;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+  border: 0;
+  outline: 0;
+  vertical-align: top;
+  padding: .5rem;
+}
+.compose .send {
+  width: 5rem;
+}
+.compose .name {
+  width: 10rem;
+}
+.compose .message {
+  width: calc(100% - 15rem);
+}
