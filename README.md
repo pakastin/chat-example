@@ -1,4 +1,4 @@
-# chat-example
+# Chat example
 express.js ♥︎ socket.io ♥︎ VanillaJS
 
 Really simple chat example.
