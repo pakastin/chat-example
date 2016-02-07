@@ -13,7 +13,7 @@ html {
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  color: #222;
+  color: #333;
 }
 .messages {
   height: calc(100% - 2.5rem);
@@ -22,6 +22,12 @@ body {
 .messages table {
   border-collapse: separate;
   border-spacing: .5rem .25rem;
+}
+.messages .time {
+  color: #999;
+}
+.messages .name {
+  color: #666;
 }
 .compose {
   position: fixed;
@@ -40,12 +46,12 @@ body {
   vertical-align: top;
   padding: .5rem;
 }
-.compose .send {
-  width: 5rem;
-}
 .compose .name {
   width: 10rem;
 }
 .compose .message {
   width: calc(100% - 15rem);
+}
+.compose .send {
+  width: 5rem;
 }

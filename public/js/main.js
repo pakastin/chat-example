@@ -40,8 +40,8 @@
       messagesBody
     ])
   ]);
-  var name = input({className: 'name', placeholder: 'Nickname', autofocus: true});
-  var message = input({className: 'message', placeholder: 'Message'});
+  var name = input({className: 'name', placeholder: 'Name', autofocus: true, required: true});
+  var message = input({className: 'message', placeholder: 'Message', required: true});
   var send = button({className: 'send', textContent: 'Send'});
 
   var compose = form({className: 'compose'}, [
@@ -55,11 +55,13 @@
 
   socket.on('msg', function (msg) {
     var time = humanizeTime(msg.time);
-    var nickname = msg.nickname;
+    var name = msg.name;
     var message = msg.message;
 
     messagesBody.appendChild(tr(null, [
-      td({textContent: time}), td({textContent: nickname}), td({textContent: message})
+      td({className: 'time', textContent: time}),
+      td({className: 'name', textContent: name}),
+      td({className: 'message', textContent: message})
     ]));
     messages.scrollTop = messages.scrollHeight;
   });
@@ -68,7 +70,7 @@
     e.preventDefault();
 
     socket.emit('msg', {
-      nickname: name.value,
+      name: name.value,
       message: message.value
     });
     message.value = '';
@@ -79,5 +81,9 @@
 function humanizeTime (time) {
   var date = new Date(time);
 
-  return date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+  return zeroify(date.getHours()) + ':' + zeroify(date.getMinutes()) + ':' + zeroify(date.getSeconds());
+}
+
+function zeroify (num) {
+  return ('0' + num).slice(-2);
 }
