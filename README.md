@@ -3,6 +3,10 @@ express.js ♥︎ socket.io ♥︎ VanillaJS
 
 Minimalistic chat example. Pull requests welcome!
 
+Frontend code: https://github.com/pakastin/chat-example/blob/master/public/js/main.js
+
+Backend code: https://github.com/pakastin/chat-example/blob/master/src/index.js
+
 ## Demo
 [https://chat-example-pakastin.c9users.io/](https://chat-example-pakastin.c9users.io/)
 
