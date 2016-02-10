@@ -23,18 +23,15 @@ io.on('connection', function (socket) {
         name: data.name,
         message: 'joined..'
       });
-      sockets[socket.id] = data.name;
-      sendUserList();
     } else if (sockets[socket.id] !== data.name) {
       io.emit('msg', {
         time: Date.now(),
         name: sockets[socket.id],
         message: 'changed name to ' + data.name + '..'
       });
-      sockets[socket.id] = data.name;
-      sendUserList();
     }
     sockets[socket.id] = data.name;
+    sendUserList();
     data.time = Date.now();
     io.emit('msg', data);
   });
