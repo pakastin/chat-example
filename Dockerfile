@@ -1,5 +1,5 @@
 
-FROM node:4.2
+FROM node:4.3
 MAINTAINER Juha Lindstedt <juha@pakastin.fi>
 
 ENV NODE_ENV=production
