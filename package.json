@@ -1,6 +1,6 @@
 {
   "name": "chat-example",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Chat example with express.js + socket.io",
   "main": "index.js",
   "scripts": {
